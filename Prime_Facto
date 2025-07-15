@@ -1,0 +1,22 @@
+import java.util.* ; 
+public class PrimeFact{
+    public static void primeFacto(int n){
+        for(int i = 2 ; i * i <= n ; i++){
+            if(n % i == 0){
+                int count = 0 ; 
+                while(n % i == 0 ){
+                    count++ ; 
+                    n /= i ; 
+                }
+                System.out.print(i +  " ^ " + count + "  ") ; 
+            }
+        }
+        if(n > 1)System.out.println(n + " ^ " + 1) ; 
+        
+    }
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in) ; 
+        int n = sc.nextInt() ; 
+        primeFacto(n) ; 
+    }
+}

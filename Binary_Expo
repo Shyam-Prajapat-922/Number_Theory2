@@ -1,0 +1,22 @@
+import java.util.* ; 
+public class Binary{
+    public static long mod = 1000000007 ; 
+    public static void BinaryExpo(long base , long n ){
+        long  res = 1 ; 
+        while(n != 0){
+            if((n & 1 )== 1){
+                res = (res * base ) % mod ;
+            }
+            base = (base * base ) % mod ; 
+            n /= 2 ; 
+        }
+        System.out.println(res) ; 
+        
+    }
+    public static void main(String []args){
+        Scanner sc = new Scanner(System.in) ; 
+        long base = sc.nextLong() ;
+        long n = sc.nextLong() ; 
+        BinaryExpo(base , n) ; 
+    }
+}

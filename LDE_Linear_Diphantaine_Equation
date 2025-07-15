@@ -1,0 +1,25 @@
+import java.util.* ; 
+public class Power{
+   public static int gcd(int xy[] , int a , int b){
+       if(b == 0){
+           xy[0] = 1 ; 
+           xy[1] = 0 ;
+           return a ; 
+       }
+       int xy1[] = new int[2] ; 
+       int g = gcd(xy1 , b , a % b); 
+       xy[0] = xy1[1] ; 
+       xy[1] = xy1[0] - xy1[1] * (a /b)  ; 
+       return g ; 
+   }
+    public static void main(String []args){
+        Scanner sc = new Scanner(System.in) ; 
+        int a = sc.nextInt() ; 
+        int b = sc.nextInt() ; 
+        int xy[] = new int[2] ; 
+        int res = gcd(xy , a , b) ;
+        System.out.println(xy[0] * a + xy[1] * b == res ? "YES" : "NO") ; 
+        
+        
+    }
+}

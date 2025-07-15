@@ -1,0 +1,19 @@
+import java.util.* ; 
+public class Power{
+    public static void pow(int base , int n , int mod){
+        int res = 1 ; 
+        while(n != 0){
+            if(n % 2 == 1){
+                res = (res * base) % mod ; 
+            }
+            base = (base * base ) % mod ; 
+            n /= 2 ; 
+        }
+        System.out.println(res % mod) ; 
+    }
+    public static void main(String []args){
+        Scanner sc = new Scanner(System.in) ; 
+        int n = sc.nextInt() ; 
+        pow(8 , n , 10) ; 
+    }
+}
